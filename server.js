@@ -3,9 +3,11 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const path = require('path')
-const frontendPath = path.join(__dirname, '..', 'frontend')
+const cors = require('cors');
+// const frontendPath = path.join(__dirname, '..', 'frontend')
 app.use(express.json())
-app.use(express.static(frontendPath))
+app.use(cors());
+// app.use(express.static(frontendPath))
 
 const API_KEY = process.env.OPEN_WEATHER_API_KEY
 if (!API_KEY) {

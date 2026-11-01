@@ -10,9 +10,7 @@ const User = require("./models/user");
 const cors = require('cors');
 // const frontendPath = path.join(__dirname, '..', 'frontend')
 app.use(express.urlencoded({ extended: true}));
-app.use(cors({
-  origin: "https://frontend-two-steel-kadry91a8w.vercel.app"
-}));
+app.use(cors());
 app.use(express.json())
 // app.use(express.static(frontendPath))
 connectdb()

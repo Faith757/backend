@@ -118,6 +118,13 @@ app.post("/user/login", async (req, res) => {
     return res.status(500).json({ message: error.message || "Internal server error" });
   }
 });
+app.post("/user/logout", (req, res) =>{
+   try{
+     return res.status(200).json({message: "Logout successful!"})
+   }catch(error){
+     return res.status(500).json({message: error.message})
+   }
+})
 app.listen(PORT, () => {
   console.log(`server is running on http://localhost:${PORT}`)
 })
